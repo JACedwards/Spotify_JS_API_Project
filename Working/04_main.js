@@ -1,7 +1,23 @@
 console.log('test')
 
-
-
+const getAuth = async () => {
+    // const <cid goes here>
+    // const <ckey goes here>
+    const encodedString = btoa(clientID + ":" + clientSecret)
+    const response = await fetch('https://accounts.spotify.com/api/token',
+    {
+        method: 'POST',
+        headers: {
+            'Authorization': `Basic ${encodedString}`,
+            'Content-Type' : 'application/x-www-form-urlencoded'
+        },
+        body: 'grant_type=client_credentials'
+    }
+    );
+    let token = await response.json()
+    console.log(token)
+    return token.access_token
+}
 
 const loadToken = async () => {
     const token = await getAuth();

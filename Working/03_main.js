@@ -1,11 +1,10 @@
 console.log('test')
 
-// Client Id: c2664ec3b0c04d188b08620542866fae
-// Secret Key: 78763df6e57c44d08a07ae821cfbe8a0
+
 
 const getAuth = async () => {
-    const clientID = 'c2664ec3b0c04d188b08620542866fae'
-    const clientSecret = '78763df6e57c44d08a07ae821cfbe8a0'
+    // const <cid goes here>
+    // const <ckey goes here>
     const encodedString = btoa(clientID + ":" + clientSecret)
     const response = await fetch('https://accounts.spotify.com/api/token',
     {
@@ -33,7 +32,7 @@ const loadToken = async () => {
 
 const getSong = async () =>{
     const token = await loadToken();
-    let data = await fetch(`https://api.spotify.com/v1/search?type=track&q=track:anemone+artist:slenderbodies&limit=1`,
+    let data = await fetch(`https://api.spotify.com/v1/search?type=track&q=track:battlefield+artist:all%20the%20kings%20men&limit=1`,
         {
             method: 'GET',
             headers: {

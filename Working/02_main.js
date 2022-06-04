@@ -1,7 +1,23 @@
 console.log('test')
 
-
-
+const getAuth = async () => {
+    // const <cid goes here>
+    // const <ckey goes here>
+    const encodedString = btoa(clientID + ":" + clientSecret)
+    const response = await fetch('https://accounts.spotify.com/api/token',
+    {
+        method: 'POST',
+        headers: {
+            'Authorization': `Basic ${encodedString}`,
+            'Content-Type' : 'application/x-www-form-urlencoded'
+        },
+        body: 'grant_type=client_credentials'
+    }
+    );
+    let token = await response.json()
+    console.log(token)
+    return token.access_token
+}
 
 const loadToken = async () => {
     const token = await getAuth();
@@ -14,7 +30,7 @@ const loadToken = async () => {
 
 const getSong = async () =>{
     const token = await loadToken();
-    let data = await fetch(`https://api.spotify.com/v1/search?type=track&q=track:battlefield+artist:all%20the%20kings%20men&limit=1`,
+    let data = await fetch(`https://api.spotify.com/v1/search?type=track&q=track:wonderwall+artist:uga%20noteworthy&limit=1`,
         {
             method: 'GET',
             headers: {
@@ -31,7 +47,6 @@ const getSong = async () =>{
 
 let playbutton = document.querySelector('#pbtn')
 playbutton.addEventListener('click', () => {getSong();});
-
 
 // 1****Pentatonix:  Hallelujah
 // `https://api.spotify.com/v1/search?type=track&q=track:Hallelujah+artist:Pentatonix&limit=1`
