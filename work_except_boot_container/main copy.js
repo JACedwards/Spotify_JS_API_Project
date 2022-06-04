@@ -1,7 +1,11 @@
 console.log('test')
 
 
-
+const getAuth = async () => {
+    // const <add here> = 'c2664ec3b0c04d188b08620542866fae'
+    // const <add here> = '78763df6e57c44d08a07ae821cfbe8a0'
+    const encodedString = btoa(clientID + ":" + clientSecret)
+    const response = await fetch('https://accounts.spotify.com/api/token',
     {
         method: 'POST',
         headers: {
@@ -42,8 +46,9 @@ const getSong = async () =>{
     audioobj.play();
 }
 
-let playbutton = document.querySelector('#pbtn')
+let playbutton = document.querySelector('#pbtn1')
 playbutton.addEventListener('click', () => {getSong();});
+
 
 // 1****Pentatonix:  Hallelujah
 // `https://api.spotify.com/v1/search?type=track&q=track:Hallelujah+artist:Pentatonix&limit=1`
