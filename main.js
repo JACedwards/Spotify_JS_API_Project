@@ -33,7 +33,7 @@ const loadToken = async () => {
 
 const getSong = async () =>{
     const token = await loadToken();
-    let data = await fetch(`https://api.spotify.com/v1/search?type=track&q=track:baby+artist:uga%20noteworthy&limit=1`,
+    let data = await fetch(`https://api.spotify.com/v1/search?type=track&q=track:wonderwall+artist:uga%20noteworthy&limit=1`,
         {
             method: 'GET',
             headers: {
@@ -93,7 +93,15 @@ playbutton.addEventListener('click', () => {getSong();});
     //image 225x225
 
 //****All the King's Men:  Battlefield
-//`https://api.spotify.com/v1/search?type=track&q=track:battlefield+artist:all%20the%20kings%20men&limit=1`    
+//`https://api.spotify.com/v1/search?type=track&q=track:battlefield+artist:all%20the%20kings%20men&limit=1`  
 
 
+//UGA Noteworthy: baby
+//`https://api.spotify.com/v1/search?type=track&q=track:baby+artist:uga%20noteworthy&limit=1`
 
+//uga noteworth:  final countdown
+//`https://api.spotify.com/v1/search?type=track&q=track:final%20countdown+artist:uga%20noteworthy&limit=1`
+
+
+//****best  of theirs? uga noteworthy wonderwall
+//`https://api.spotify.com/v1/search?type=track&q=track:wonderwall+artist:uga%20noteworthy&limit=1`
