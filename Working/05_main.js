@@ -2,7 +2,8 @@ console.log('test')
 
 
 const getAuth = async () => {
-
+    const clientID = 'c2664ec3b0c04d188b08620542866fae'
+    const clientSecret = '78763df6e57c44d08a07ae821cfbe8a0'
     const encodedString = btoa(clientID + ":" + clientSecret)
     const response = await fetch('https://accounts.spotify.com/api/token',
     {
@@ -45,37 +46,8 @@ const getSong = async () =>{
     audioobj.play();
 }
 
-const getSong2 = async () =>{
-    const token = await loadToken();
-    let data = await fetch(`https://api.spotify.com/v1/search?type=track&q=track:ring%20of%20fire+artist:home%20free&limit=1`,
-        {
-            method: 'GET',
-            headers: {
-                'Content-Type' : 'application/json',
-                'Authorization' : `Bearer ${token}`
-            }
-        });
-    data = await data.json();
-    console.log(data)
-    console.log(data.tracks.items[0].preview_url);
-    let audioobj = new Audio(data.tracks.items[0].preview_url);
-    audioobj.play();
-}
-
-// let findId = (song_artist) =>{
-//     if (song_artist == 'Hallelujah+artist:Pentatonix'){
-//         getSong('Hallelujah+artist:Pentatonix');
-//     }
-//     getSong({song_artist});
-//     console.log(song_artist)
-// }
-
 let playbutton = document.querySelector('#pbtn')
 playbutton.addEventListener('click', () => {getSong();});
-
-let playbutton2 = document.querySelector('#pbtn2')
-playbutton2.addEventListener('click', () => {getSong2();});
-
 
 
 
