@@ -2,8 +2,8 @@ console.log('test')
 
 
 const getAuth = async () => {
-    // const clienti
-    // const clientSe
+    // const clientI
+    // const clientS
     const encodedString = btoa(clientID + ":" + clientSecret)
     const response = await fetch('https://accounts.spotify.com/api/token',
     {
