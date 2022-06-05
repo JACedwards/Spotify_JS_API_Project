@@ -2,7 +2,8 @@ console.log('test')
 
 
 const getAuth = async () => {
-
+    // const  = 'c2664ec3b0c04d188b08620542866fae'
+    // const  = '78763df6e57c44d08a07ae821cfbe8a0'
     const encodedString = btoa(clientID + ":" + clientSecret)
     const response = await fetch('https://accounts.spotify.com/api/token',
     {
@@ -182,15 +183,33 @@ const getSong9 = async () =>{
             }
         });
     data = await data.json();
+    console.log(data)
+    console.log(data.tracks.items[0].preview_url);
     let audioobj = new Audio(data.tracks.items[0].preview_url);
     audioobj.play();
-    let stop_button = document.querySelector('#stop_song')
-    stop_button.addEventListener('click', () => {audioobj.pause();});
 }
+
+
 
 
 let playbutton = document.querySelector('#pbtn')
 playbutton.addEventListener('click', () => {getSong();});
+
+/* Toggle--experiment :start */
+
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+/* Toggle--experiment :start */
+
+
+
+
 
 let playbutton2 = document.querySelector('#pbtn2')
 playbutton2.addEventListener('click', () => {getSong2();});
@@ -215,17 +234,6 @@ playbutton8.addEventListener('click', () => {getSong8();});
 
 let playbutton9 = document.querySelector('#pbtn9')
 playbutton9.addEventListener('click', () => {getSong9();});
-
-
-// stop button attempt begin
-// let stop_button = document.querySelector('stop_song')
-// stop_button.addEventListener('click', () => {audioobj.pause();});
-// stop button attempt begin
-
-
-
-
-
 
 
 

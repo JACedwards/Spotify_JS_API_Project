@@ -2,7 +2,8 @@ console.log('test')
 
 
 const getAuth = async () => {
-
+// need clientID
+// need client Key
     const encodedString = btoa(clientID + ":" + clientSecret)
     const response = await fetch('https://accounts.spotify.com/api/token',
     {
@@ -182,11 +183,13 @@ const getSong9 = async () =>{
             }
         });
     data = await data.json();
+    console.log(data)
+    console.log(data.tracks.items[0].preview_url);
     let audioobj = new Audio(data.tracks.items[0].preview_url);
     audioobj.play();
-    let stop_button = document.querySelector('#stop_song')
-    stop_button.addEventListener('click', () => {audioobj.pause();});
 }
+
+
 
 
 let playbutton = document.querySelector('#pbtn')
@@ -215,17 +218,6 @@ playbutton8.addEventListener('click', () => {getSong8();});
 
 let playbutton9 = document.querySelector('#pbtn9')
 playbutton9.addEventListener('click', () => {getSong9();});
-
-
-// stop button attempt begin
-// let stop_button = document.querySelector('stop_song')
-// stop_button.addEventListener('click', () => {audioobj.pause();});
-// stop button attempt begin
-
-
-
-
-
 
 
 
