@@ -2,7 +2,8 @@ console.log('test')
 
 
 const getAuth = async () => {
-
+    const clientID = 'c2664ec3b0c04d188b08620542866fae'
+    const clientSecret = '78763df6e57c44d08a07ae821cfbe8a0'
     const encodedString = btoa(clientID + ":" + clientSecret)
     const response = await fetch('https://accounts.spotify.com/api/token',
     {
@@ -62,7 +63,7 @@ const getSong2 = async () =>{
     console.log(data.tracks.items[0].preview_url);
     let audioobj = new Audio(data.tracks.items[0].preview_url);
     audioobj.play();
-    let stop_button = document.querySelector('#stop_song')
+    let stop_button = document.querySelector('#stop_song2')
     stop_button.addEventListener('click', () => {audioobj.pause();});
 }
 
@@ -82,7 +83,7 @@ const getSong3 = async () =>{
     console.log(data.tracks.items[0].preview_url);
     let audioobj = new Audio(data.tracks.items[0].preview_url);
     audioobj.play();
-    let stop_button = document.querySelector('#stop_song')
+    let stop_button = document.querySelector('#stop_song3')
     stop_button.addEventListener('click', () => {audioobj.pause();});
 }
 
@@ -102,7 +103,7 @@ const getSong4 = async () =>{
     console.log(data.tracks.items[0].preview_url);
     let audioobj = new Audio(data.tracks.items[0].preview_url);
     audioobj.play();
-    let stop_button = document.querySelector('#stop_song')
+    let stop_button = document.querySelector('#stop_song4')
     stop_button.addEventListener('click', () => {audioobj.pause();});
 }
 
@@ -122,7 +123,7 @@ const getSong5 = async () =>{
     console.log(data.tracks.items[0].preview_url);
     let audioobj = new Audio(data.tracks.items[0].preview_url);
     audioobj.play();
-    let stop_button = document.querySelector('#stop_song')
+    let stop_button = document.querySelector('#stop_song5')
     stop_button.addEventListener('click', () => {audioobj.pause();});
 }
 
@@ -142,7 +143,7 @@ const getSong6 = async () =>{
     console.log(data.tracks.items[0].preview_url);
     let audioobj = new Audio(data.tracks.items[0].preview_url);
     audioobj.play();
-    let stop_button = document.querySelector('#stop_song')
+    let stop_button = document.querySelector('#stop_song6')
     stop_button.addEventListener('click', () => {audioobj.pause();});
 }
 
@@ -162,7 +163,7 @@ const getSong7 = async () =>{
     console.log(data.tracks.items[0].preview_url);
     let audioobj = new Audio(data.tracks.items[0].preview_url);
     audioobj.play();
-    let stop_button = document.querySelector('#stop_song')
+    let stop_button = document.querySelector('#stop_song7')
     stop_button.addEventListener('click', () => {audioobj.pause();});
 }
 
@@ -182,7 +183,7 @@ const getSong8 = async () =>{
     console.log(data.tracks.items[0].preview_url);
     let audioobj = new Audio(data.tracks.items[0].preview_url);
     audioobj.play();
-    let stop_button = document.querySelector('#stop_song')
+    let stop_button = document.querySelector('#stop_song8')
     stop_button.addEventListener('click', () => {audioobj.pause();});
 }
 
@@ -200,7 +201,7 @@ const getSong9 = async () =>{
     data = await data.json();
     let audioobj = new Audio(data.tracks.items[0].preview_url);
     audioobj.play();
-    let stop_button = document.querySelector('#stop_song')
+    let stop_button = document.querySelector('#stop_song9')
     stop_button.addEventListener('click', () => {audioobj.pause();});
 }
 

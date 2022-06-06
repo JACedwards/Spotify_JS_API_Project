@@ -31,4 +31,12 @@
     filter: grayscale(100%);
   }
 
+#stop_song, #stop_song2, #stop_song3, #stop_song9, #stop_song4, #stop_song5, #stop_song6, #stop_song7, #stop_song8{
+  width: 224px;
+  color: white;
+  background-color: black;
+}
 
+body{
+  background-color: rgb(41,65,171)
+}
